@@ -8,6 +8,9 @@ const server = async () => {
   const hapiServer = Hapi.server({
     port: PORT,
     host: HOST,
+    routes: {
+      cors: true,
+    },
   });
 
   hapiServer.route(routes);
