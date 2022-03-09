@@ -6,8 +6,8 @@ const HOST = process.env.HOST || "localhost";
 
 const server = async () => {
   const hapiServer = Hapi.server({
-    port: PORT,
-    host: HOST,
+    port: 3000,
+    host: "localhost",
     routes: {
       cors: true,
     },
@@ -17,7 +17,7 @@ const server = async () => {
 
   try {
     await hapiServer.start();
-    console.log(`Listening on http://${HOST}:${PORT}/`);
+    console.log(`Listening on http://localhost:3000/`);
   } catch (err) {
     console.log(err);
     process.exit(1);
