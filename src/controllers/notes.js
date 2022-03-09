@@ -6,7 +6,9 @@ const getAllNotesHandler = async (req, h) => {
     return h
       .response({
         status: "success",
-        data: notes,
+        data: {
+          notes,
+        },
       })
       .code(200);
   } catch (error) {
@@ -26,7 +28,9 @@ const getNoteByIdHandler = async (req, h) => {
     return h
       .response({
         status: "success",
-        data: note,
+        data: {
+          note: note[0],
+        },
       })
       .code(200);
   } catch (error) {
