@@ -3,6 +3,17 @@ const { getAllNotesHandler, getNoteByIdHandler, addNoteHandler, editNoteByIdHand
 
 const routes = [
   {
+    path: "/",
+    method: "*",
+    handler: (req, h) => {
+      return h
+        .response({
+          message: "Hai there!",
+        })
+        .code(200);
+    },
+  },
+  {
     path: "/notes",
     method: "GET",
     handler: getAllNotesHandler,
